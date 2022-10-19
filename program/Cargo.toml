@@ -1,24 +1,16 @@
 [package]
 name = "program"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 
-[features]
-# https://docs.solana.com/developing/on-chain-programs/developing-rust#project-layout
-#
-# When toggled on this feature will cause the crate to not compile a
-# bpf entrypoint.
-#
-# See the corresponding `#[cfg(not(feature = "exclude_entrypoint"))]`
-# in lib.rs. This is needed so that other Solana programs can import
-# helper functions from this library without causing symbol conflicts
-# with our entrypoint.
-exclude_entrypoint = []
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-solana-program = "1"
-borsh = "0.9.1"
+solana-program = "1.13.4"
+
+[dev-dependencies]
+solana-program-test = "1.13.4"
+solana-sdk = "1.13.4"
 
 [lib]
-name = "helloworld"
-crate-type = ["cdylib", "lib"]
+crate-type = ["cdylib","lib"]
